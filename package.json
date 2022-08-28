@@ -1,0 +1,23 @@
+{
+  "name": "npm-specifier-loader",
+  "version": "1.0.0",
+  "description": "Node.js module loader enabling support for npm specifier imports",
+  "main": "./npm-specifier-loader.mjs",
+  "exports": "./npm-specifier-loader.mjs",
+  "type": "module",
+  "scripts": {
+    "demo": "node --experimental-import-meta-resolve --experimental-loader npm-specifier-loader",
+    "clear-cache": "rm -rf ~/.npm-specifier-cache"
+  },
+  "keywords": [
+    "npm",
+    "specifier",
+    "loader",
+    "node",
+    "module",
+    "url",
+    "experimental"
+  ],
+  "author": "Will Nayes",
+  "license": "MIT"
+}
