@@ -2,12 +2,22 @@
   "name": "npm-specifier-loader",
   "version": "1.0.0",
   "description": "Node.js module loader enabling support for npm specifier imports",
+  "author": "Will Nayes",
+  "license": "MIT",
+  "homepage": "https://github.com/wnayes/npm-specifier-loader",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wnayes/npm-specifier-loader.git"
+  },
   "main": "./npm-specifier-loader.mjs",
   "exports": "./npm-specifier-loader.mjs",
   "type": "module",
   "scripts": {
     "demo": "node --experimental-import-meta-resolve --experimental-loader npm-specifier-loader",
     "clear-cache": "rm -rf ~/.npm-specifier-cache"
+  },
+  "engines": {
+    "node": ">=16"
   },
   "keywords": [
     "npm",
@@ -17,7 +27,5 @@
     "module",
     "url",
     "experimental"
-  ],
-  "author": "Will Nayes",
-  "license": "MIT"
+  ]
 }
