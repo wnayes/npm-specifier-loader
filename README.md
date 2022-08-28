@@ -23,6 +23,11 @@ app.listen(port, () => {
 ```
 
 See the `demos` folder in the repository for other examples of the syntax.
+Demos can be ran from the repository checkout as follows:
+
+```
+npm run demo -- ./demos/express.mjs
+```
 
 ## Setup
 
@@ -70,6 +75,9 @@ To customize which `npm` to use, set the `NPM_SPECIFIER_LOADER_NPM_PATH` environ
 
 ## Caveats
 
+- This is an _experimental_ package, since the module loaders API in Node itself is experimental.
+- The loader is not guaranteed to be thread safe across multiple instances of Node.
+  - Multiple instances of Node could attempt to install packages into the cache directory at the same time. This could be mitigated by isolating the cache directory used by each process.
 - Each time you start node and import a given npm specifier, `npm install` will be performed.
   With the local file cache, this should not take too long for subsequent runs, but it still
   involves a process execution. This approach is done to ensure that the npm package requested
