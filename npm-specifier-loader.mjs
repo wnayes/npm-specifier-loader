@@ -2,7 +2,7 @@
  * @file Node.js module loader that can load `npm:` specifier urls.
  */
 
-import { execFile } from "node:child_process";
+import { execFileSync } from "node:child_process";
 import { homedir } from "node:os";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
@@ -27,7 +27,7 @@ export async function resolve(specifier, context, nextResolve) {
     const cachePath = join(NodeModulesCachePath, "node_modules", packageAlias);
     const installName = `${packageAlias}@npm:${packageName}`;
 
-    await execNpmInstall(installName);
+    execNpmInstall(installName);
 
     const mainModuleUrlString = await import.meta.resolve(
       packageAlias,
@@ -49,21 +49,13 @@ export async function resolve(specifier, context, nextResolve) {
  * @param {string} packageInstallName Name of package to install
  */
 function execNpmInstall(packageInstallName) {
-  return new Promise((resolve, reject) => {
-    execFile(
-      NPMPath,
-      [
-        "install",
-        "--no-package-lock",
-        "--prefix",
-        NodeModulesCachePath,
-        packageInstallName,
-      ],
-      (err) => {
-        err ? reject(err) : resolve();
-      }
-    );
-  });
+  execFileSync(NPMPath, [
+    "install",
+    "--no-package-lock",
+    "--prefix",
+    NodeModulesCachePath,
+    packageInstallName,
+  ]);
 }
 
 /**
