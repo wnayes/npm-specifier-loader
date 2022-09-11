@@ -1,6 +1,7 @@
 # npm-specifier-loader
 
-![npm-specifier-loader NPM](https://img.shields.io/npm/dw/npm-specifier-loader) ![npm-specifier-loader License](https://img.shields.io/npm/l/npm-specifier-loader)
+[![npm-specifier-loader NPM](https://img.shields.io/npm/dw/npm-specifier-loader)](https://www.npmjs.com/package/npm-specifier-loader)
+[![npm-specifier-loader License](https://img.shields.io/npm/l/npm-specifier-loader)](https://www.npmjs.com/package/npm-specifier-loader)
 
 Node.js ["experimental" module loader](https://nodejs.org/api/esm.html#loaders) enabling support for npm specifier imports.
 
