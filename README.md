@@ -1,5 +1,7 @@
 # npm-specifier-loader
 
+![npm-specifier-loader NPM](https://img.shields.io/npm/dw/npm-specifier-loader) ![npm-specifier-loader License](https://img.shields.io/npm/l/npm-specifier-loader)
+
 Node.js ["experimental" module loader](https://nodejs.org/api/esm.html#loaders) enabling support for npm specifier imports.
 
 This is inspired by the [similar feature announced for Deno](https://deno.com/blog/changes#compatibility-with-node-and-npm),
